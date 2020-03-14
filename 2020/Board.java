@@ -7,9 +7,6 @@ import javax.swing.*;
 public class Board implements ActionListener {
 	private static Square[] squArr = new Square[25];
 	Square startSqu, endSqu;
-	static int s1 = -1;
-	static int s2 = -1;
-    int step = 1;
 
     public Board() {
         JFrame frame = new JFrame("Game");
