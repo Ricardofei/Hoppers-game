@@ -55,12 +55,86 @@ public class Board implements ActionListener {
     
 }
 
-@Override
 public void actionPerformed(ActionEvent e) {
     
 		int num = Integer.parseInt(e.getActionCommand());
-		int row = num / 5;
-		int col = num % 5;
+	if (squArr[num].getInfo().equals(Square.GreenFrog)) {
+            squArr[num].setInfo(Square.GreenFrog2);
+        } else if (squArr[num].getInfo().equals(Square.GreenFrog2)) {
+            squArr[num].setInfo(Square.GreenFrog);
+        }
+
+        else if (squArr[num].getInfo().equals(Square.LilyPad)) {
+
+            if (0 <= num - 12 && num + 12 >= 24) {
+
+                if (squArr[num - 12].getInfo().equals(Square.GreenFrog2)) {
+                    if (squArr[num - 6].getInfo().equals(Square.GreenFrog)) {
+                        squArr[num - 12].setInfo(Square.LilyPad);
+                        squArr[num].setInfo(Square.GreenFrog);
+                        squArr[num - 6].setInfo(Square.LilyPad);
+
+                    }
+                } else if (squArr[num + 12].getInfo().equals(Square.GreenFrog2)) {
+                    if (squArr[num + 6].getInfo().equals(Square.GreenFrog)) {
+                        squArr[num + 12].setInfo(Square.LilyPad);
+                        squArr[num].setInfo(Square.GreenFrog);
+                        squArr[num + 6].setInfo(Square.LilyPad);
+
+                    }
+                } else if (squArr[num - 8].getInfo().equals(Square.GreenFrog2)) {
+                    if (squArr[num - 4].getInfo().equals(Square.GreenFrog)) {
+                        squArr[num - 8].setInfo(Square.LilyPad);
+                        squArr[num].setInfo(Square.GreenFrog);
+                        squArr[num - 4].setInfo(Square.LilyPad);
+
+                    }
+                } else if (squArr[num + 8].getInfo().equals(Square.GreenFrog2)) {
+                    if (squArr[num + 4].getInfo().equals(Square.GreenFrog)) {
+                        squArr[num + 8].setInfo(Square.LilyPad);
+                        squArr[num].setInfo(Square.GreenFrog);
+                        squArr[num + 4].setInfo(Square.LilyPad);
+
+                    }
+
+                }
+            }else if(0<=num-8&&num+8<=24){
+             
+
+                    if (squArr[num - 12].getInfo().equals(Square.GreenFrog2)) {
+                        if (squArr[num - 6].getInfo().equals(Square.GreenFrog)) {
+                            squArr[num - 12].setInfo(Square.LilyPad);
+                            squArr[num].setInfo(Square.GreenFrog);
+                            squArr[num - 6].setInfo(Square.LilyPad);
+    
+                        }
+                    } else if (squArr[num + 12].getInfo().equals(Square.GreenFrog2)) {
+                        if (squArr[num + 6].getInfo().equals(Square.GreenFrog)) {
+                            squArr[num + 12].setInfo(Square.LilyPad);
+                            squArr[num].setInfo(Square.GreenFrog);
+                            squArr[num + 6].setInfo(Square.LilyPad);
+    
+                        }
+                    } else if (squArr[num - 8].getInfo().equals(Square.GreenFrog2)) {
+                        if (squArr[num - 4].getInfo().equals(Square.GreenFrog)) {
+                            squArr[num - 8].setInfo(Square.LilyPad);
+                            squArr[num].setInfo(Square.GreenFrog);
+                            squArr[num - 4].setInfo(Square.LilyPad);
+    
+                        }
+                    } else if (squArr[num + 8].getInfo().equals(Square.GreenFrog2)) {
+                        if (squArr[num + 4].getInfo().equals(Square.GreenFrog)) {
+                            squArr[num + 8].setInfo(Square.LilyPad);
+                            squArr[num].setInfo(Square.GreenFrog);
+                            squArr[num + 4].setInfo(Square.LilyPad);
+    
+                        }
+    
+                    }
+                
+            }
+        }
+		
 }
 
 
