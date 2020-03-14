@@ -41,7 +41,12 @@ public class Board implements ActionListener {
 				squArr[i] = new Square(i, Square.LilyPad);
             }
             
-           
+    if (i == 4 || i == 6 || i == 8 || i == 12 || i == 16 || i == 20) {
+                squArr[i] = new Square(i, Square.GreenFrog);
+            }
+
+            if (i == 24)
+                squArr[i] = new Square(i, Square.RedFrog);           
            
                
 
